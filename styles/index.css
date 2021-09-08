@@ -1,0 +1,55 @@
+* {
+  margin:0;
+  padding:0;
+  font-family: Verdana;
+}
+
+body {
+  background-color: rgb(245, 232, 205);
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  background-color: rgb(109, 5, 5);
+}
+
+li {
+  float: left;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  color: white;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+li a:hover {
+  background-color: darkred;
+}
+
+li a.active {
+  background-color: rgb(88, 0, 0);
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(184, 15, 15);
+}
+
+p {
+  font-size: 20px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+body.darkify {
+  background-color: #121212;
+  color: #1f1a24;
+}
