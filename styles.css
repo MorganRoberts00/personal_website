@@ -1,0 +1,104 @@
+:root {
+  /* Light Mode Colors */
+  --lbg: white;
+  --ltext: black;
+  --lpc: #546e7a;
+  --lplc: #819ca9;
+  --lpdc: #29434e;
+  --lsc: #795548;
+  --lslc: #a98274;
+  --lsdc: #4b2c20;
+
+  /* Dark Mode Colors */
+  --dbg: #1a1a1a;
+  --dtext: white;
+  --dpc: #00897b;
+  --dplc: #4ebaaa;
+  --dpdc: #005b4f;
+  --dsc: #8e24aa;
+  --dslc: #c158dc;
+  --dsdc: #5c007a;
+}
+
+* {
+  margin:0;
+  padding:0;
+  font-family:'Courier New', Courier, monospace;
+}
+
+body {
+  background: var(--lbg);
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  padding: 5%;
+}
+
+p {
+  font-size: 25px;
+  padding: 0 0 5% 5%;
+}
+
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  list-style-type: none;
+  overflow: hidden;
+  background: var(--lpc);
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.4s;
+  color: white;
+}
+
+.navbar li a.active { /* Inactive Current Page */
+  background: var(--lpdc);
+}
+
+.navbar li a:hover { /* Active Current Page */
+  background: var(--lpdc);
+}
+
+.navbar li a:hover:not(.active) { /* Inactive Other Page */
+  background: var(--lplc);
+}
+
+/* Dark Mode */
+
+.dark_theme {
+  background: var(--dbg);
+  color: var(--dtext);
+}
+
+.dark_theme .navbar {
+  background: var(--dsc);
+  color: var(--dtext);
+}
+
+.dark_theme .navbar li a {
+  color: var(--dtext);
+}
+
+.dark_theme .navbar li a.active {
+  background: var(--dslc);
+}
+
+.dark_theme .navbar li a:hover {
+  background: var(--dslc);
+}
+
+.dark_theme .navbar li a:hover:not(.active) {
+  background: var(--dsdc);
+}
