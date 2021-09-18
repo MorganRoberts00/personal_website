@@ -59,6 +59,7 @@ function typewriting(color) {
 
 // load webpage
 window.onload = function () {
+  setBackground();
   setStyle(getStyle());
   document.getElementById("darkswitch").checked = (getStyle() == "dark");
   typewriting(true);
@@ -113,4 +114,11 @@ function setStyle(color) {
 function flipStyle() {
   color = (getStyle() == "light") ? "dark" : "light";
   setStyle(color);
+}
+
+function setBackground() {
+  var totalCount = 6;
+  var num = Math.ceil(Math.random() * totalCount);
+  var bg = document.querySelector(".background");
+  bg.style.backgroundImage = 'url("backgrounds/' + num + '.jpg")';
 }
