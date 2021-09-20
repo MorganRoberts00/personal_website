@@ -58,11 +58,9 @@ function typewriting(color) {
 
 
 // load webpage
-window.onload = function () {
-  setBackground();
+function prepWindow() {
   setStyle(getStyle());
   document.getElementById("darkswitch").checked = (getStyle() == "dark");
-  typewriting(true);
 };
 
 // gets style and sets default if null
@@ -86,27 +84,34 @@ function setStyle(color) {
       glassy[i].classList.remove("text-light");
     }
   } else {
-
     for (var i = 0; i < glassy.length; i++) {
       glassy[i].classList.add("text-light");
       glassy[i].classList.remove("text-dark", "glass-dark");
     }
   }
 
+
   var page = document.getElementById("page");
   var bar = document.getElementById("bar");
+  var content = document.getElementById("content");
   if (color == "light") {
     bar.classList.add("bg-light", "navbar-light");
     bar.classList.remove("bg-dark", "navbar-dark");
 
     page.classList.add("bg-light");
     page.classList.remove("bg-dark");
+
+    content.classList.add("text-dark");
+    content.classList.remove("text-light");
   } else {
     bar.classList.add("bg-dark", "navbar-dark");
     bar.classList.remove("bg-light", "navbar-light");
 
     page.classList.add("bg-dark");
     page.classList.remove("bg-light");
+
+    content.classList.add("text-light");
+    content.classList.remove("text-dark");
   }
 };
 
@@ -117,8 +122,17 @@ function flipStyle() {
 }
 
 function setBackground() {
-  var totalCount = 6;
+  var totalCount = 7;
   var num = Math.ceil(Math.random() * totalCount);
   var bg = document.querySelector(".background");
   bg.style.backgroundImage = 'url("backgrounds/' + num + '.jpg")';
+}
+
+function invertColor() {
+  var selector = "b";
+  if (getStyle() == "dark") {
+    selector = "w";
+  }
+  document.getElementById("fifths").src = 'images/circle_fifths_' + selector + '.png';
+  // console.log('images/circle_fifths_' + selector + '.png');
 }

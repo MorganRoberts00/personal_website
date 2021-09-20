@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service</title>
-  <link rel="icon" href="images/initials.ico">
+  <title>Home</title>
+  <link rel="icon" href="icons/initials.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -14,18 +14,20 @@
 
 </head>
 
-<body id="page" class="noscroll">
+<body id="page" class="noscroll" onload="prepWindow()">
   <!-- Navigation Bar -->
-  <nav id="bar" class="navbar fixed-top navbar-expand-lg">
+  <nav id="bar" class="navbar navbar-expand-md fixed-top shadow">
     <div class="container">
+      <!-- Brand -->
       <a href="index.html" class="navbar-brand">Morgan Roberts</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <!-- Hamburger -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleBurger"
+        aria-controls="toggleBurger" aria-expanded="false" aria-lable="Toggle Navigation Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav nav-pills ms-auto">
+      <!-- Page List -->
+      <div class="collapse navbar-collapse m-1" id="toggleBurger">
+        <ul class="navbar-nav nav-pills ms-auto text-center">
           <li class="nav-item">
             <a href="index.html" class="nav-link">Home</a>
           </li>
@@ -43,11 +45,13 @@
               data-bs-toggle="dropdown" aria-expanded="false">
               Options
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul class="dropdown-menu glass" aria-labelledby="navbarDropdownMenuLink">
               <li>
-                <div class="form-check form-switch">
-                  <input onclick="flipStyle()" class=" form-check-input" type="checkbox" id="darkswitch">
-                  <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
+                <div class="d-flex justify-content-center">
+                  <div class="form-check form-switch">
+                    <input onclick="flipStyle()" class="form-check-input" type="checkbox" id="darkswitch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -58,11 +62,39 @@
   </nav>
 
   <!-- Content -->
-  <a href="#" class=" text-decoration-none d-flex flex-column min-vh-100 justify-content-center align-items-center">
-    <h1 id="about">
-      Portfolio
-    </h1>
-  </a>
+  <div id="content" class="container min-vh-100 mt-5 pt-5">
+
+    <div class="col d-flex align-items-center justify-content-center border rounded">
+      <div class="display-2">
+        Service
+      </div>
+
+    </div>
+    <div class="row d-flex align-items-center justify-content-center p-5">
+      <div class="col lead p-3">
+        <a href="https://www.facebook.com/LongviewThanksgiving/" target="_blank" rel="noopener noreferrer">
+          <img src="icons/food.jpg" class="img-fluid border rounded" alt="Food Drive Image">
+        </a>
+        <p class="p-3">
+          My hometown of Longview does a yearly canned food drive to provide a thanksgiving dinner for those in need.
+          Typically, the volunteers meet at Maude Cobb, the local convention center, where we spend the day unpacking
+          and
+          sorting canned food that has been graciously donated for the occasion. On top of being for a good cause, its
+          also fun to hang out with people in the community.
+        </p>
+      </div>
+      <div class="col lead p-3">
+        <p class="p-3">
+          Once a year, the Longview Library is transformed into a haunted house. The volunteers are in charge of
+          dressing up the interior as well as participating in scaring the people who navigate the haunted house. It's a
+          fun experience that teaches teamwork and gives back to the community.
+        </p>
+        <a href="https://www.longviewtexas.gov/3294/Haunted-Library" target="_blank" rel="noopener noreferrer">
+          <img src="images/library.jpg" class="img-fluid border rounded" alt="Haunted Library">
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
